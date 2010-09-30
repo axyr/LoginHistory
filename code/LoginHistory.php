@@ -13,6 +13,14 @@ class LoginHistory extends DataObject{
 	
 	static $default_sort = 'Created DESC';
 	
+	static $summary_fields = array(
+		'Date' 		=> 'Date',
+		'Time' 		=> 'Time',
+		'Ip' 		=> 'Ip',
+		'City' 		=> 'City',
+		'Country' 	=> 'Country'
+	);
+	
 	function __construct($record = null, $isSingleton = false) {
 		parent::__construct($record, $isSingleton);
 	}
