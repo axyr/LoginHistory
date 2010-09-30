@@ -11,6 +11,8 @@ class LoginHistory extends DataObject{
 		'Member' => 'Member'
 	);
 	
+	static $default_sort = 'Created DESC';
+	
 	function __construct($record = null, $isSingleton = false) {
 		parent::__construct($record, $isSingleton);
 	}
