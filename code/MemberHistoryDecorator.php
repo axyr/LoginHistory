@@ -22,15 +22,15 @@ class MemberHistoryDecorator extends DataObjectDecorator{
 	
 	function updateCMSFields(FieldSet &$fields) {
 		$fields->removeFieldsFromTab("Root", array('LoginHistories'));
-		
+		$sng = singleton('LoginHistory');
 		$tf = new TableListField(
-					'LoginHistory',
-					'LoginHistory',
-					array('Date' => 'Date', 'Time' => 'Time', 'Ip' => 'Ip', 'City' => 'City', 'Country' => 'Country'),
-					'LoginHistory.MemberID='.$this->owner->ID
-			);
+			$sng->ClassName,
+			$sng->ClassName,
+			$sng->summaryFields(),
+			$sng->ClassName.'.MemberID='.$this->owner->ID
+		);
+		$tf->setShowPagination(true);
 		$fields->addFieldToTab('Root.LoginHistory', $tf);
-		
 	}
 	
 }
