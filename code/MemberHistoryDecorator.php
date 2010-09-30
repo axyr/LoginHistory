@@ -26,7 +26,8 @@ class MemberHistoryDecorator extends DataObjectDecorator{
 		$tf = new TableListField(
 					'LoginHistory',
 					'LoginHistory',
-					array('Date' => 'Date', 'Time' => 'Time', 'Ip' => 'Ip', 'City' => 'City', 'Country' => 'Country')
+					array('Date' => 'Date', 'Time' => 'Time', 'Ip' => 'Ip', 'City' => 'City', 'Country' => 'Country'),
+					'LoginHistory.MemberID='.$this->owner->ID
 			);
 		$fields->addFieldToTab('Root.LoginHistory', $tf);
 		
